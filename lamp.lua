@@ -15,13 +15,13 @@ lamp={
 			end
 		end,
 	
-	oil = {type="A", burn=function()print("Oil is burning!")end},
+	electricty = {capacity="220V", consumed=function()print("Electricity is consumed!")end},
 	on=function() 
 			print("lamp is on"); 
 			--[[(function()
 				print("Oil is burning!")
 				end)()]]--
-			lamp.oil.burn()
+			lamp.electricity.consumed()
 		end,
 	getPosition=function()
 		if(lamp.pos)then return lamp.pos 
