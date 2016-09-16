@@ -1,0 +1,25 @@
+function update(incFactor)
+	file = io.open("game_pos.data", "r")
+	result = file:read("*a")
+	result = tonumber(result)
+	result = result + incFactor
+	io.close(file)
+	result = tostring(result)
+	file = io.open("game_pos.data", "w")
+	file:write(result)
+	io.close(file)	
+end
+sprite{
+	"a.jpg",
+	10, 10,
+	updateA=function() 
+		update(2)
+	end
+}
+sprite{
+	"b.jpg",
+	13, 23,
+	updateB = function ()
+		print("image b")
+	end
+}
